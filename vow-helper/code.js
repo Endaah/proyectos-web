@@ -4,9 +4,9 @@
 let symbol1, symbol2, symbol3;
 
 /**
- * Link symbol images to their names names
+ * Link symbol images to their names
  */
-const images = new Map([
+const symbolImages = new Map([
     ['pyramid', 'url(./Images/pyramid.png)'],
     ['give', 'url(./Images/give.png)'],
     ['darkness', 'url(./Images/darkness.png)'],
@@ -16,6 +16,21 @@ const images = new Map([
     ['stop', 'url(./Images/stop.png)'],
     ['guardian', 'url(./Images/guardian.png)'],
     ['kill', 'url(./Images/kill.png)']
+]);
+
+/**
+ * Link location images to the symbol names
+ */
+const locations = new Map([
+    ['pyramid', []],
+    ['give', ['url(./Images/give-door1.png)']],
+    ['darkness', ['url(./Images/darkness-door1.png)', 'url(./Images/darkness-door2.png)']],
+    ['traveler', ['url(./Images/traveler-door1.png)', 'url(./Images/traveler-door2.png)', 'url(./Images/traveler-door3.png)']],
+    ['worship', ['url(./Images/worship-door1.png)', 'url(./Images/worship-door2.png)']],
+    ['light', ['url(./Images/light-doo1.png)', 'url(./Images/light-door2.png)']],
+    ['stop', ['url(./Images/stop-door1.png)']],
+    ['guardian', ['url(./Images/guardian-door1.png)', 'url(./Images/guardian-door2.png)', 'url(./Images/guardian-door3.png)', 'url(./Images/guardian-door4.png)']],
+    ['kill', ['url(./Images/kill-door1.png)']]
 ]);
 
 /**
@@ -70,21 +85,21 @@ function setSymbol(symbolName) {
     if (!symbol1) {
         symbol1 = symbolName; // Set the name of the first symbol
         var pillarSymbol = document.getElementById("pillar-symbol-1"); // Get the element with Id pillar-symbol-1
-        pillarSymbol.style.backgroundImage = images.get(symbolName); // Set the background image to the selected symbol
+        pillarSymbol.style.backgroundImage = symbolImages.get(symbolName); // Set the background image to the selected symbol
         pillarSymbol.style.cursor = "pointer"; // Change the cursor to pointer
         pillarSymbol.onclick = function() {clearSymbol(1);}; // Set the onclick function to {clearSymbol()}
     }
     else if (!symbol2) {
         symbol2 = symbolName; // Set the name of the second symbol
         var pillarSymbol = document.getElementById("pillar-symbol-2"); // Get the element with Id pillar-symbol-2
-        pillarSymbol.style.backgroundImage = images.get(symbolName); // Set the background image to the selected symbol
+        pillarSymbol.style.backgroundImage = symbolImages.get(symbolName); // Set the background image to the selected symbol
         pillarSymbol.style.cursor = "pointer"; // Change the cursor to pointer
         pillarSymbol.onclick = function() {clearSymbol(2);}; // Set the onclick function to {clearSymbol()}
     }
     else if (!symbol3) {
         symbol3 = symbolName; // Set the name of the third symbol
         var pillarSymbol = document.getElementById("pillar-symbol-3"); // Get the element with Id pillar-symbol-3
-        pillarSymbol.style.backgroundImage = images.get(symbolName); // Set the background image to the selected symbol
+        pillarSymbol.style.backgroundImage = symbolImages.get(symbolName); // Set the background image to the selected symbol
         pillarSymbol.style.cursor = "pointer"; // Change the cursor to pointer
         pillarSymbol.onclick = function() {clearSymbol(3);}; // Set the onclick function to {clearSymbol()}
     }
@@ -148,7 +163,7 @@ function showInfo() {
             symbol == symbol2 ||
             symbol == symbol3) {
             count++; // Up the counter
-            document.querySelector(".info-" + count + " .image").style.backgroundImage = images.get(symbol); // Set the background image to the symbol image
+            document.querySelector(".info-" + count + " .image").style.backgroundImage = symbolImages.get(symbol); // Set the background image to the symbol image
             document.querySelector(".info-" + count + " .info-wrapper .title h3").innerText = symbol.substring(0, 1).toUpperCase() + symbol.substring(1); // Set the title of the panel to the symbol's name
             document.querySelector(".info-" + count + " .info-wrapper .desc span").innerText = descriptions.get(symbol); // Set the description of the symbol
             if (count >= 3) break; // Once three symbols have been set up, exit the loop
