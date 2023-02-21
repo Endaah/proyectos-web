@@ -158,29 +158,29 @@ function showInfo() {
 
 /**
  * Check a symbol as triggered
- * @param {*} Id Id of the symbol to check in the info panel
+ * @param {number} Id Id of the symbol to check in the info panel
  */
 function checkSymbol(Id) {
+
     var descToHide = document.querySelector(".info-" + Id + " .desc");
-    var titleToDarken = document.querySelector(".info-" + Id + " .title");
-    var title = document.querySelector(".info-" + Id + " .title");
-    var chckbx = document.querySelector(".info-" + Id + " .checkbox"); 
+    var title = document.querySelector(".info-" + Id + " .title"); 
 
     descToHide.classList.add("fade-out");
-    titleToDarken.classList.add("disabled");
-    title.onclick = chckbx.onclick = function() {uncheckSymbol(Id)};
-
+    title.classList.add("disabled");
+    title.onclick = function() {uncheckSymbol(Id);};
 }
 
+/**
+ * Unckecks a symbol
+ * @param {number} Id Id of the symbol to unckeck in the info panel
+ */
 function uncheckSymbol(Id) {
     var descToHide = document.querySelector(".info-" + Id + " .desc");
-    var titleToDarken = document.querySelector(".info-" + Id + " .title");
     var title = document.querySelector(".info-" + Id + " .title");
-    var chckbx = document.querySelector(".info-" + Id + " .checkbox"); 
 
     descToHide.classList.remove("fade-out");
-    titleToDarken.classList.remove("disabled");
-    title.onclick = chckbx.onclick = function() {checkSymbol(Id)};
+    title.classList.remove("disabled");
+    title.onclick = function() {checkSymbol(Id);};
 }
 
 /**
