@@ -207,6 +207,7 @@ body {
     transform: translateX(+50%);
     transition: 0s;
     visibility: hidden;
+    transition: .75s;
 }
 
 .info {
@@ -360,6 +361,6 @@ h4 {
     filter: brightness(100%);
 }
 
-#reset {
+#reset.disabled {
     visibility: hidden;
 }

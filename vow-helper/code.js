@@ -133,7 +133,8 @@ function showInfo() {
     selection.classList.add("before"); // Add to the symbols the class "before" that makes it disappear to the left
     info.classList.remove("after"); // Remove from the info the class "after" that makes it be hidden to the right
     info.classList.add("current"); // Add to the info the class "current" that makes it be active and centered
-    document.getElementById("next").hidden = true; // Disable the "next" button
+    document.getElementById("next").hidden = true; // Hide the "next" button
+    document.getElementById("reset").classList.remove("disabled"); // Show the "reset" button
     document.getElementById("step1").classList.remove("disabled"); // Enable the step 1 selector
     document.getElementById("step2").classList.add("disabled"); // Disable step 2 selector
 
@@ -165,4 +166,30 @@ function checkSymbol(Id) {
 
     descToHide.classList.add("fade-out");
     titleToDarken.classList.add("disabled");
+}
+
+/**
+ * Return to the selection panel
+ */
+function showSymbolSelection() {
+    const selection = document.querySelector(".selection.container"); // Get the symbols container
+    const info = document.querySelector(".info.container"); // Get the info container
+    selection.classList.add("current"); // Remove from the symbols the class "current" that makes it be active and centered
+    selection.classList.remove("before"); // Add to the symbols the class "before" that makes it disappear to the left
+    info.classList.add("after"); // Remove from the info the class "after" that makes it be hidden to the right
+    info.classList.remove("current"); // Add to the info the class "current" that makes it be active and centered
+    document.getElementById("next").hidden = false; // Hide the "next" button
+    document.getElementById("reset").classList.add("disabled"); // Show the "reset" button
+    document.getElementById("step1").classList.add("disabled"); // Enable the step 1 selector
+    document.getElementById("step2").classList.remove("disabled"); // Disable step 2 selector
+}
+
+/**
+ * Clears all symbol selections and returns to the selection panel
+ */
+function reset() {
+    clearSymbol(1);
+    clearSymbol(2);
+    clearSymbol(3);
+    showSymbolSelection();
 }
