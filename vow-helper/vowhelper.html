@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="code.js"></script>
+    <title>Vow Symbol Helper</title>
+</head>
+<body>
+    
+    <div class="selection container current">
+        <div class="pillar">
+            <div id="pillar-symbol-1"></div>
+            <div id="pillar-symbol-2"></div>
+            <div id="pillar-symbol-3"></div>
+        </div>
+        <div class="symbol-container">
+            <div class="symbol pyramid" onclick="setSymbol('pyramid')"></div>
+            <div class="symbol give" onclick="setSymbol('give')"></div>
+            <div class="symbol darkness" onclick="setSymbol('darkness')"></div>
+            <div class="symbol traveler" onclick="setSymbol('traveler')"></div>
+            <div class="symbol worship" onclick="setSymbol('worship')"></div>
+            <div class="symbol light" onclick="setSymbol('light')"></div>
+            <div class="symbol stop" onclick="setSymbol('stop')"></div>
+            <div class="symbol guardian" onclick="setSymbol('guardian')"></div>
+            <div class="symbol kill" onclick="setSymbol('kill')"></div>
+        </div>
+    </div>
+    <div class="info container after">
+        <div class="info-1">
+            <div class="image"></div>
+            <div class="info-wrapper">
+                <div class="title" onclick="checkSymbol(1)">
+                    <h3></h3>
+                    <button class="checkbox" id="check1" onclick="checkSymbol(1)"><h4>Done!</h4></button>
+                </div>
+                <div class="desc"><span></span></div>
+            </div>
+        </div>
+        <div class="info-2">
+            <div class="image"></div>
+            <div class="info-wrapper">
+                <div class="title" onclick="checkSymbol(2)">
+                    <h3></h3>
+                    <button class="checkbox" id="check2" onclick="checkSymbol(2)"><h4>Done!</h4></button>
+                </div>
+                <div class="desc"><span></span></div>
+            </div>
+        </div>
+        <div class="info-3">
+            <div class="image"></div>
+            <div class="info-wrapper">
+                <div class="title" onclick="checkSymbol(3)">
+                    <h3></h3>
+                    <button class="checkbox" id="check3" onclick="checkSymbol(3)"><h4>Done!</h4></button>
+                </div>
+                <div class="desc"><span></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="step-selector"></div>
+    <button class="button disabled" id="next" onclick="showInfo()">Next</button>
+
+</body>
+</html>

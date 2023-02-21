@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+@keyframes bg-anim {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(
+        to left,
+        black,
+        #282A3A,
+        black);
+    background-size: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bg-anim 20s infinite;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    background-color: black;
+    border-radius: 5px;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    box-shadow:
+        0 0 25px black,
+        0 0 50px black,
+        0 0 75px black,
+        0 0 125px black,
+        0 0 175px black,
+        0 0 225px black,
+        0 0 250px black;
+}
+
+.pillar {
+    background-image: url("./Images/symbol-pillar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+#pillar-symbol-1 {
+    background-image: url("./Images/blank.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 110px;
+    height: 110px;
+    position: relative;
+    top: 37px;
+}
+
+#pillar-symbol-2 {
+    background-image: url("./Images/blank.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 110px;
+    height: 110px;
+    position: relative;
+    top: 45px;
+}
+
+#pillar-symbol-3 {
+    background-image: url("./Images/blank.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 110px;
+    height: 110px;
+    position: relative;
+    top: 53px;
+}
+
+.symbol-container {
+    background-color: black;
+    border-radius: 5%;
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.symbol {
+    position: relative;
+    border-radius: 10%;
+    width: 110px;
+    height: 110px;
+    cursor: pointer;
+    transition: .3s;
+    margin-left: 13px;
+    margin-top: 13px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.symbol:hover {
+    box-shadow: 0 0 10px 3px lightgray;
+    transform: translateY(-5%);
+    transition: .1s;
+}
+
+.pyramid {
+    background-image: url("./Images/pyramid.png");
+}
+
+.give {
+    background-image: url("./Images/give.png");
+}
+
+.darkness {
+    background-image: url("./Images/darkness.png");
+}
+
+.traveler {
+    background-image: url("./Images/traveler.png");
+}
+
+.worship {
+    background-image: url("./Images/worship.png");
+}
+
+.light {
+    background-image: url("./Images/light.png");
+}
+
+.stop {
+    background-image: url("./Images/stop.png");
+}
+
+.guardian {
+    background-image: url("./Images/guardian.png");
+}
+
+.kill {
+    background-image: url("./Images/kill.png");
+}
+
+.button {
+    background-color: #C69749;
+    box-shadow: 
+        0 0 0 0 #735F32,
+        0 0 10px 1px #C69749;
+    width: 20vw;
+    height: 50px;
+    position: absolute;
+    bottom: 10%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 1.25rem;
+}
+
+.button:hover:not(.disabled) {
+    transform: translateY(3px);
+    box-shadow: 
+        0 -3px 0 0 #735F32,
+        0 -3px 10px 1px #C69749;
+    transition: .5s;
+}
+
+.button.disabled {
+    transition: 0.05s;
+    filter: brightness(25%);
+}
+
+.container.before {
+    position: absolute;
+    opacity: 0%;
+    transform: translateX(-50%);
+    transition: .75s;
+    visibility: hidden;
+}
+
+.container.current {
+    position: relative;
+    opacity: 100%;
+    transform: translateX(0%);
+    transition: .75s;
+}
+
+.container.after {
+    opacity: 0%;
+    transform: translateX(+50%);
+    transition: 0s;
+    visibility: hidden;
+}
+
+.info {
+    flex-direction: column;
+}
+
+.info-1 {
+    width: 100%;
+    height: calc(100% / 3);
+    display: flex;
+}
+
+.info-2 {
+    width: 100%;
+    height: calc(100% / 3);
+    display: flex;
+}
+
+.info-3 {
+    width: 100%;
+    height: calc(100% / 3);
+    display: flex;
+}
+
+.image {
+    aspect-ratio: 1 / 1;
+    height: 90%;
+    background-size: contain;
+}
+
+.info-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    height: 25%;
+    width: 97%;
+    background-color: #C69749;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 
+        0 0 10px 5px #C69749;
+    z-index: 1;
+    filter: brightness(110%);
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.title h3 {
+    margin: 1%;
+}
+
+.checkbox {
+    transition: .3s;
+    aspect-ratio: 1 / 1;
+    width: 15px;
+    margin-right: 5%;
+    box-shadow:
+        2px 2px 0 rgb(44, 44, 44)
+        ;
+    cursor: pointer;
+}
+
+.checkbox:hover {
+    box-shadow: 
+        0 0 10px 2px rgb(192, 192, 192),
+        2px 2px 0 rgb(44, 44, 44)
+        ;
+    transition: .2s;
+}
+
+.desc {
+    height: 55%;
+    width: 97%;
+    background-color: rgb(236, 236, 236);
+    z-index: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.desc span {
+    margin: 1%;
+}
+
+.fade-out {
+    height: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+
+.info-wrapper:has(.disabled) {
+    filter: brightness(50%);
+    transform: translateY(30%);
+    transition: .5s;
+}
+
+.title.disabled .checkbox {
+    background-color: inherit;
+    box-shadow: 0 0 0;
+}
+
+h4 {
+    opacity: 0%;
+    position: relative;
+    left: -500%;
+    visibility: hidden;
+    color: rgb(2, 83, 2);
+}
+
+.title.disabled h4 {
+    opacity: 100%;
+    transition: .3s .4s;
+    visibility: visible;
+}
