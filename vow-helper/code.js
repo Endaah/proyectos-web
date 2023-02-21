@@ -134,6 +134,8 @@ function showInfo() {
     info.classList.remove("after"); // Remove from the info the class "after" that makes it be hidden to the right
     info.classList.add("current"); // Add to the info the class "current" that makes it be active and centered
     document.getElementById("next").hidden = true; // Disable the "next" button
+    document.getElementById("step1").classList.remove("disabled"); // Enable the step 1 selector
+    document.getElementById("step2").classList.add("disabled"); // Disable step 2 selector
 
     // Loop to re-order the selected symbols
     // This makes the info to always appear in the order it is supposed to
