@@ -161,11 +161,26 @@ function showInfo() {
  * @param {*} Id Id of the symbol to check in the info panel
  */
 function checkSymbol(Id) {
-    var descToHide = document.querySelector(".info-" + Id + " .info-wrapper .desc");
-    var titleToDarken = document.querySelector(".info-" + Id + " .info-wrapper .title");
+    var descToHide = document.querySelector(".info-" + Id + " .desc");
+    var titleToDarken = document.querySelector(".info-" + Id + " .title");
+    var title = document.querySelector(".info-" + Id + " .title");
+    var chckbx = document.querySelector(".info-" + Id + " .checkbox"); 
 
     descToHide.classList.add("fade-out");
     titleToDarken.classList.add("disabled");
+    title.onclick = chckbx.onclick = function() {uncheckSymbol(Id)};
+
+}
+
+function uncheckSymbol(Id) {
+    var descToHide = document.querySelector(".info-" + Id + " .desc");
+    var titleToDarken = document.querySelector(".info-" + Id + " .title");
+    var title = document.querySelector(".info-" + Id + " .title");
+    var chckbx = document.querySelector(".info-" + Id + " .checkbox"); 
+
+    descToHide.classList.remove("fade-out");
+    titleToDarken.classList.remove("disabled");
+    title.onclick = chckbx.onclick = function() {checkSymbol(Id)};
 }
 
 /**
@@ -191,5 +206,8 @@ function reset() {
     clearSymbol(1);
     clearSymbol(2);
     clearSymbol(3);
+    uncheckSymbol(1);
+    uncheckSymbol(2);
+    uncheckSymbol(3);
     showSymbolSelection();
 }
