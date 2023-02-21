@@ -367,3 +367,26 @@ h4 {
 #reset.disabled {
     visibility: hidden;
 }
+
+.image-wrapper {
+    aspect-ratio: 16 / 9;
+    height: 30vh;
+    position: absolute;
+    opacity: 80%;
+    visibility: hidden;
+}
+
+#images-1 {
+    background-color: black;
+    transform: translate(15%, -180px);
+}
+
+#images-2 {
+    background-color: black;
+    transform: translate(15%, -50px);
+}
+
+#images-3 {
+    background-color: black;
+    transform: translate(15%, 80px);
+}
