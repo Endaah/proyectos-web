@@ -397,7 +397,15 @@ h4 {
 .image-box {
     aspect-ratio: 16 / 9;
     height: 95%;
-    background-color: red;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.image-box > div {
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    height: 100%;
 }
 
 .move-button {
@@ -442,8 +450,4 @@ h4 {
     transform: translate(-3px);
     box-shadow: 
         5px 1px 0 0px white;
-}
-
-.image-box {
-    
 }

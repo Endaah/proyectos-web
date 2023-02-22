@@ -169,6 +169,23 @@ function showInfo() {
             if (count >= 3) break; // Once three symbols have been set up, exit the loop
         }
     }
+
+    setImagesToWrapper();
+}
+
+/**
+ * Set the location images to the wrapper
+ */
+function setImagesToWrapper() {
+    var panel = document.querySelector("#images-1 .image-box");
+
+    panel.innerHTML = "";
+    for (var index in locations.get('guardian')) {
+        var loc = locations.get('guardian')[index];
+        var div = document.createElement("div");
+        div.style.backgroundImage = loc;
+        panel.appendChild(div);
+    }
 }
 
 /**
@@ -225,4 +242,18 @@ function reset() {
     uncheckSymbol(2);
     uncheckSymbol(3);
     showSymbolSelection();
+}
+
+/**
+ * Scroll left the images
+ */
+function rightShiftImages(Id) {
+    document.getElementById("image-box-1").scrollLeft += 475;
+}
+
+/**
+ * Scroll right the images
+ */
+function leftShiftImages(Id) {
+    document.getElementById("image-box-1").scrollLeft -= 475;
 }
