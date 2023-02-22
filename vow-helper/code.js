@@ -278,12 +278,12 @@ function reset() {
  * Scroll left the images
  */
 function rightShiftImages(Id) {
-    document.getElementById("image-box-" + Id).scrollLeft += 475;
+    document.getElementById("image-box-" + Id).scrollLeft += 300;
 }
 
 /**
  * Scroll right the images
  */
 function leftShiftImages(Id) {
-    document.getElementById("image-box-" + Id).scrollLeft -= 475;
+    document.getElementById("image-box-" + Id).scrollLeft -= 300;
 }

@@ -399,6 +399,7 @@ h4 {
     height: 95%;
     display: flex;
     overflow-x: hidden;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
 }
 
@@ -406,6 +407,7 @@ h4 {
     aspect-ratio: 16 / 9;
     background-size: cover;
     height: 100%;
+    scroll-snap-align: start;
 }
 
 .move-button {
