@@ -272,6 +272,10 @@ function reset() {
     uncheckSymbol(2);
     uncheckSymbol(3);
     showSymbolSelection();
+
+    document.getElementById("image-box-1").scrollLeft = 0;
+    document.getElementById("image-box-2").scrollLeft = 0;
+    document.getElementById("image-box-3").scrollLeft = 0;
 }
 
 /**
