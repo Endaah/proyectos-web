@@ -153,6 +153,8 @@ function showInfo() {
     document.getElementById("step1").classList.remove("disabled"); // Enable the step 1 selector
     document.getElementById("step2").classList.add("disabled"); // Disable step 2 selector
 
+    var aux1, aux2, aux3;
+
     // Loop to re-order the selected symbols
     // This makes the info to always appear in the order it is supposed to
     var count = 0; // Iteration counter
@@ -166,25 +168,53 @@ function showInfo() {
             document.querySelector(".info-" + count + " .image").style.backgroundImage = symbolImages.get(symbol); // Set the background image to the symbol image
             document.querySelector(".info-" + count + " .info-wrapper .title h3").innerText = symbol.substring(0, 1).toUpperCase() + symbol.substring(1); // Set the title of the panel to the symbol's name
             document.querySelector(".info-" + count + " .info-wrapper .desc span").innerText = descriptions.get(symbol); // Set the description of the symbol
-            if (count >= 3) break; // Once three symbols have been set up, exit the loop
+            if (count == 1) aux1 = symbol;
+            else if (count == 2) aux2 = symbol;
+            else if (count >= 3) {aux3 = symbol; break;} // Once three symbols have been set up, exit the loop
         }
     }
+
+    symbol1 = aux1;
+    symbol2 = aux2;
+    symbol3 = aux3;
 
     setImagesToWrapper();
 }
 
 /**
- * Set the location images to the wrapper
+ * Reset the wrappers and add the images
  */
 function setImagesToWrapper() {
-    var panel = document.querySelector("#images-1 .image-box");
+    var carousel1 = document.querySelector("#image-box-1");
+    var carousel2 = document.querySelector("#image-box-2");
+    var carousel3 = document.querySelector("#image-box-3");
 
-    panel.innerHTML = "";
-    for (var index in locations.get('guardian')) {
-        var loc = locations.get('guardian')[index];
-        var div = document.createElement("div");
-        div.style.backgroundImage = loc;
-        panel.appendChild(div);
+    carousel1.innerHTML = "";
+    carousel2.innerHTML = "";
+    carousel3.innerHTML = "";
+
+    // Loop for the first carousel
+    for (var index1 in locations.get(symbol1)) {
+        var loc1 = locations.get(symbol1)[index1];
+        var div1 = document.createElement("div");
+        div1.style.backgroundImage = loc1;
+        carousel1.appendChild(div1);
+    }
+
+    // Loop for the second carousel
+    for (var index2 in locations.get(symbol2)) {
+        var loc2 = locations.get(symbol2)[index2];
+        var div2 = document.createElement("div");
+        div2.style.backgroundImage = loc2;
+        carousel2.appendChild(div2);
+    }
+
+    // Loop for the third carousel
+    for (var index3 in locations.get(symbol3)) {
+        var loc3 = locations.get(symbol3)[index3];
+        var div3 = document.createElement("div");
+        div3.style.backgroundImage = loc3;
+        carousel3.appendChild(div3);
     }
 }
 
@@ -248,12 +278,12 @@ function reset() {
  * Scroll left the images
  */
 function rightShiftImages(Id) {
-    document.getElementById("image-box-1").scrollLeft += 475;
+    document.getElementById("image-box-" + Id).scrollLeft += 475;
 }
 
 /**
  * Scroll right the images
  */
 function leftShiftImages(Id) {
-    document.getElementById("image-box-1").scrollLeft -= 475;
+    document.getElementById("image-box-" + Id).scrollLeft -= 475;
 }
