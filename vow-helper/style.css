@@ -371,11 +371,13 @@ h4 {
     visibility: hidden;
 }
 
-.image-icon:hover ~ .image-wrapper, .image-wrapper:hover {
+.image-icon:hover ~ .image-wrapper,
+.image-wrapper:hover {
     visibility: visible;
     transform: translateX(-10%);
     opacity: 100%;
     transition: .2s;
+    scale: 100%;
 }
 
 .image-wrapper {
@@ -385,13 +387,14 @@ h4 {
     opacity: 80%;
     z-index: 1;
     visibility: hidden;
-    transform: translateX(0);
+    transform: translateX(50%);
     opacity: 0%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
+    scale: 0%;
 }
 
 .image-box {
@@ -452,4 +455,24 @@ h4 {
     transform: translate(-3px);
     box-shadow: 
         5px 1px 0 0px white;
+}
+
+#return-button {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 1.5rem;
+    padding: 20px;
+    padding-left: 40px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.fa-person-walking-arrow-loop-left {
+    color: #C69749;
+}
+
+#return-button:hover {
+    transform: translate(-10%);
+    transition: .1s;
 }
