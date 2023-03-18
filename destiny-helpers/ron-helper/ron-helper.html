@@ -4,10 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
     <script src="code.js"></script>
-    <title>Document</title>
+    <title>RoN Helper</title>
 </head>
 <body>
+    
+    <div class="container" id="main">
+        <div class="container" id="flower-selection">
+            <input type="checkbox" id="selector1">
+            <label for="selector1">
+                <div class="button light" id="button1" onclick="setAlig(1, 'light')"></div>
+                <div class="button dark" id="button1" onclick="setAlig(1, 'dark')"></div>
+                <div class="flower blank" id="flower1""></div>
+            </label>
+            <input type="checkbox" id="selector2">
+            <label for="selector2">
+                <div class="button light" id="button2" onclick="setAlig(2, 'light')"></div>
+                <div class="button dark" id="button2" onclick="setAlig(2, 'dark')"></div>
+                <div class="flower blank" id="flower2"></div>
+            </label>
+            <input type="checkbox" id="selector3">
+            <label for="selector3">
+                <div class="button light" id="button3" onclick="setAlig(3, 'light')"></div>
+                <div class="button dark" id="button3" onclick="setAlig(3, 'dark')"></div>
+                <div class="flower blank" id="flower3"></div>
+            </label>
+        </div>
+        <div class="container" id="room-locations">
+            <div class="location" id="room1">
+                <div class="link blank" id="link1"></div>
+                <div class="info">
+                    <h3>Room #1</h3>
+                    <p>Just before the first encounter, prior to climbing que big root. The door is behind the roots at the end of the room</p>
+                </div>
+                <div class="image-popup" id="images1"></div>
+            </div>
+            <div class="location" id="room2">
+                <div class="link blank" id="link2"></div>
+                <div class="info">
+                    <h3>Room #2</h3>
+                    <p>During the interphase where Nezarec pulses with Darkness waves that kill you, before getting to the first door that requires all 6 people. Jump to the structure on the left</p>
+                </div>
+                <div class="image-popup" id="images2"></div>
+            </div>
+            <div class="location" id="room3">
+                <div class="link blank" id="link3"></div>
+                <div class="info">
+                    <h3>Room #3</h3>
+                    <p>Right before the last encounter, instead of going up the penultimate root, drop down to the lower one. The entrance to the room is in the ceiling.</p>
+                </div>
+                <div class="image-popup" id="images3"></div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>

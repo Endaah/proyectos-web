@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./Images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    
+}
+
+.container#main {
+    position: absolute;
+    width: calc(60vw + 5rem);
+    height: calc(40vh + 5rem);
+    flex-wrap: wrap;
+    align-items: start;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 100px 1px white,
+        0 0 100px 1px black;
+}
+
+.container#flower-selection {
+    width: 50%;
+    height: 100%;
+    flex-basis: 250px;
+    flex-grow: 1;
+    scroll-snap-align: start;
+    background-image: url("./Images/flower-selection-background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    position: relative;
+}
+
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+.button {
+    position: absolute;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    height: 7%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#button1 {
+    transform: translate(-410%, -53%);
+}
+
+#button2 {
+    transform: translate(-75%, -300%);
+}
+
+#button3 {
+    transform: translate(125%, 75%);
+}
+
+#selector1:checked ~ label #button1.light {
+    transform: translate(-610%, -53%);
+    transition: .2s;
+}
+
+#selector1:checked ~ label #button1.dark {
+    transform: translate(-210%, -53%);
+    transition: .2s;
+}
+
+#selector2:checked ~ label #button2.light {
+    transform: translate(-275%, -300%);
+    transition: .2s;
+}
+
+#selector2:checked ~ label #button2.dark {
+    transform: translate(125%, -300%);
+    transition: .2s;
+}
+
+#selector3:checked ~ label #button3.light {
+    transform: translate(-75%, 75%);
+    transition: .2s;
+}
+
+#selector3:checked ~ label #button3.dark {
+    transform: translate(325%, 75%);
+    transition: .2s;
+}
+
+.flower {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    height: 13%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+}
+
+#flower1 {
+    transform: translate(-245%, -53%);
+}
+
+#flower2 {
+    transform: translate(-65%, -185%);
+}
+
+#flower3 {
+    transform: translate(45%, 15%);
+}
+
+.blank {
+    background-color: darkgray;
+}
+
+.dark {
+    background-color: orange;
+}
+
+.light {
+    background-color: rgb(189, 252, 252);
+}
+
+.container#room-locations {
+    width: 50%;
+    height: 100%;
+    flex-basis: 250px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.link {
+    aspect-ratio: 1 / 1;
+    width: 15%;
+    border-radius: 50%;
+    margin: 2%;
+}
+
+.link.blank {
+    visibility: hidden;
+}
+
+.link:not(.blank) {
+    visibility: visible;
+}
+
+.info {
+    position: absolute;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info > h3 {
+    font-size: calc(2vh + .25rem);
+}
+
+.info > p {
+    font-size: calc(2vh + .25rem);
+    filter: drop-shadow(0 0 3px white);
+}
