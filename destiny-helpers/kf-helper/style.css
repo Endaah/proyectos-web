@@ -23,6 +23,12 @@ input[type = checkbox] {
     cursor: pointer;
 }
 
+.main {
+    transform-style: preserve-3d;
+    background-image: url("./Images/blank-rune.png");
+    background-size: contain;
+}
+
 #main1 {
     position: absolute;
     left: 15%;
@@ -44,6 +50,7 @@ input[type = checkbox] {
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateZ(-1px);
 }
 
 .rune {
@@ -51,15 +58,15 @@ input[type = checkbox] {
     position: absolute;
     cursor: pointer;
     transform: translate(0%, 0%);
-    rotate: -80deg;
     transition: .3s;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
+    rotate: -158deg;
+    filter: drop-shadow(0 0 5px green)
 }
 
 .main:focus > .rune-container {
-    rotate: 80deg;
+    rotate: 158deg;
     transition: .3s;
 }
 
