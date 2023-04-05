@@ -1,0 +1,20 @@
+#return-button {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 1.5rem;
+    padding: 20px;
+    padding-left: 40px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.fa-person-walking-arrow-loop-left {
+    color: #9c8607;
+    filter: drop-shadow(0 0 1rem rgb(0, 0, 0))
+}
+
+#return-button:hover {
+    transform: translate(-10%);
+    transition: .1s;
+}

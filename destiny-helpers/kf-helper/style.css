@@ -5,29 +5,132 @@ body {
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    height: 100svh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#return-button {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 1.5rem;
-    padding: 20px;
-    padding-left: 40px;
-    transition: .5s;
+input[type = checkbox] {
+    visibility: hidden;
+}
+
+.selector {
+    aspect-ratio: 1 / 1;
+    height: calc(15vh + 1rem);
+    background-color: grey;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.fa-person-walking-arrow-loop-left {
-    color: #004e00;
-    filter: drop-shadow(0 0 1rem rgb(0, 0, 0))
+#main1 {
+    position: absolute;
+    left: 15%;
 }
 
-#return-button:hover {
-    transform: translate(-10%);
-    transition: .1s;
+#main2 {
+    position: absolute;
+}
+
+#main3 {
+    position: absolute;
+    right: 15%;
+}
+
+.rune-container {
+    aspect-ratio: 1 / 1;
+    height: calc(15vh + 1rem);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rune {
+    height: 38%;
+    position: absolute;
+    cursor: pointer;
+    transform: translate(0%, 0%);
+    rotate: -80deg;
+    transition: .3s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.main:focus > .rune-container {
+    rotate: 80deg;
+    transition: .3s;
+}
+
+.small1 {
+    background-image: url("./Images/Rune1.png");
+}
+
+.main:focus > .rune-container > .small1 {
+    transform: translate(0%, -200%);
+}
+
+.small2 {
+    background-image: url("./Images/Rune2.png");
+}
+
+.main:focus > .rune-container > .small2 {
+    transform: translate(128.55752193730785%, -153.20888862379562%);
+}
+
+.small3 {
+    background-image: url("./Images/Rune3.png");
+}
+
+.main:focus > .rune-container > .small3 {
+    transform: translate(196.9615506024416%, -34.72963553338609%);
+}
+
+.small4 {
+    background-image: url("./Images/Rune4.png");
+}
+
+.main:focus > .rune-container > .small4 {
+    transform: translate(173.20508075688772%, 99.99999999999997%);
+}
+
+.small5 {
+    background-image: url("./Images/Rune5.png");
+}
+
+.main:focus > .rune-container > .small5 {
+    transform: translate(68.40402866513377%, 187.93852415718163%);
+}
+
+.small6 {
+    background-image: url("./Images/Rune6.png");
+}
+
+.main:focus > .rune-container > .small6 {
+    transform: translate(-68.4040286651337%, 187.93852415718163%);
+}
+
+.small7 {
+    background-image: url("./Images/Rune7.png");
+}
+
+.main:focus > .rune-container > .small7 {
+    transform: translate(-173.20508075688764%, 99.99999999999999%);
+}
+
+.small8 {
+    background-image: url("./Images/Rune8.png");
+}
+
+.main:focus > .rune-container > .small8 {
+    transform: translate(-196.9615506024415%, -34.729635533386%);
+}
+
+.small9 {
+    background-image: url("./Images/Rune9.png");
+}
+
+.main:focus > .rune-container > .small9 {
+    transform: translate(-128.5575219373078%, -153.20888862379547%);
 }

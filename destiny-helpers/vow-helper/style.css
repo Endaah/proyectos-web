@@ -456,23 +456,3 @@ h4 {
     box-shadow: 
         5px 1px 0 0px white;
 }
-
-#return-button {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 1.5rem;
-    padding: 20px;
-    padding-left: 40px;
-    transition: .5s;
-    cursor: pointer;
-}
-
-.fa-person-walking-arrow-loop-left {
-    color: #C69749;
-}
-
-#return-button:hover {
-    transform: translate(-10%);
-    transition: .1s;
-}
